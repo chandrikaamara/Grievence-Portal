@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Student Grievance Portal</title>
+  <link rel="stylesheet" href="styles.css" />
+  
+</head>
+<body>
+  <div class="top-bar">
+  <h2><i class="fas fa-graduation-cap"></i> Student Grievance Portal</h2>
+  <div class="theme-toggle" id="themeToggle" title="Toggle Theme">🌙</div>
+</div>
+
+
+  <div class="container">
+    <div class="main-content">
+      <section class="form-section fade-in">
+        <h2><i class="fas fa-edit"></i>Submit Grievance</h2>
+        <form id="grievanceForm">
+          <label>Student ID:</label>
+          <input type="text" id="studentId" required />
+
+          <label>Problem Type:</label>
+          <select id="category">
+            <option value="Academic">Academic</option>
+            <option value="Facilities">Facilities</option>
+            <option value="Others">Others</option>
+          </select>
+
+          <label>Description:</label>
+          <textarea id="description" required></textarea>
+
+          <button type="submit">Submit Grievance</button>
+        </form>
+      </section>
+
+      <section class="list-section fade-in"> 
+        <h2><i class="fas fa-list"></i> Grievance List</h2>
+        <div class="filters">
+          <input type="text" id="searchInput" placeholder=" Search by ID or keyword"/>
+          <select id="statusFilter">
+            <option value="All">All Statuses</option>
+            <option value="Pending">Pending</option>
+            <option value="Resolved">Resolved</option>
+          </select>
+        </div>
+
+        <h2>All Grievances</h2>
+        <ul id="grievanceList"></ul>
+        <button id="clearAll">🧹 Clear All Grievances</button>
+      </section>
+    </div>
+  </div>
+
+  <div id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
